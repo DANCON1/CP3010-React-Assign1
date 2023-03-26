@@ -5,8 +5,8 @@ import SubmissionForm from "./SubmissionForm";
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Movies />} />
-      <Route path="/submission" element={<SubmissionForm />} />
+      <Route exact path="/" element={<Movies />} />
+      <Route exact path="/submission" element={<SubmissionForm />} />
     </Routes>
   );
 }

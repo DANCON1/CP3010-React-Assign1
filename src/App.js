@@ -1,22 +1,31 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Navigation from './Navigation';
+import { Route, Routes } from "react-router-dom";
 import SubmissionForm from './SubmissionForm';
 import Movies from './Movies';
+import Navigation from './Navigation';
+import React, { useState, useEffect } from "react";
+
 
 function App() {
 
-  let [movies, setMovies] = useState(null);
+  let [movie, setMovies] = useState(null);
+
+  useEffect( () => {
+    fetch("./movieList.json")
+    .then(reponse => reponse.json())
+    .then(setMovies)
+    .catch(e=>console.log(e.message))
+    }, [])
 
   return (
-    <Router>
+    <>
       <Navigation />
-      <div className="container">
-        <Route path="/" element={<Movies movies={movies} setMovies={setMovies} />} />
-        <Route path="/submission" element={<SubmissionForm movies={movies} setMovies={setMovies}/>} />
-      </div>
-    </Router>
-  );
+         <Routes>
+           <Route path="/" element={<Movies movies={(movie)} setMovies={(setMovies)}/>} />
+           <Route path="/submission" element={<SubmissionForm movies={(movie)} setMovies={(setMovies)}/>} />
+         </Routes>
+    </>
+    );
 }
 
 export default App;
