@@ -1,3 +1,7 @@
+# Currently Assignment 1 is finished, Assignment 2 will be updated in this repo in the near future.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
