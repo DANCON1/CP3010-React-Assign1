@@ -1,4 +1,5 @@
 import React from "react";
+import Container from 'react-bootstrap/Container';
 
 const Movies = (props) => {
     let movies = props.movies;
@@ -14,7 +15,7 @@ const Movies = (props) => {
     }
 
     return (    
-        <div>
+        <Container fluid='sm'>
         <h1>Movies!</h1>
         <table bordered="true">
             <tbody>
@@ -42,7 +43,7 @@ const Movies = (props) => {
             ))}
             </tbody>
         </table>
-        </div>
+        </Container>
     );
 }
 
