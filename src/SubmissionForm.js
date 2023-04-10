@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function SubmissionForm(props) {
     const txtMovieName = useRef();
@@ -42,41 +45,59 @@ function SubmissionForm(props) {
 
     return (
         <>
-        <div>
-          <h1>Submission Form!</h1>
-        </div>
+          
+        <Container fluid='sm'>
         <form onSubmit={submit} id="form_display">
+            <br></br>
+            <Row><Col>
+            <h1>Submission Form!</h1>
+            </Col></Row>
+            <br></br>
+            <Row><Col>
             <input
                 ref={txtMovieName}
                 type="text"
                 placeholder="Enter Movie Title">  
             </input>
+            </Col></Row>
             <br></br>
+            <Row><Col>
             <input
                 ref={txtMovieRelease}
                 type="text"
                 placeholder="Enter Release Date">  
             </input>
+            </Col></Row>
             <br></br>
+            <Row><Col>
             <input
                 ref={txtMovieActors}
                 type="text"
                 placeholder="Enter Actors">  
             </input>
+            </Col></Row>
             <br></br>
+            <Row><Col>
             <input
                 ref={txtMoviePoster}
                 type="text"
                 placeholder="Enter Poster Image URL">  
             </input>
+            </Col></Row>
             <br></br>
+            <Row><Col>
+            <label>Assign rating!&nbsp;&nbsp;&nbsp;</label>
             <input
                 ref={intMovieRating}
                 type="number" step="0.1" min="0" max="5">  
             </input>
+            </Col></Row>
             <br></br>
+            <Row><Col>
             <button>Submit!</button>
+            </Col></Row>
         </form>
+        </Container>
     </>
     );
 }
