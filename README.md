@@ -1,4 +1,4 @@
-# Currently Assignment 1 is finished, Assignment 2 will be updated in this repo in the near future.
+# CP3010 Assignment 1
 
 
 
